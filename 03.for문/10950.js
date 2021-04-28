@@ -1,6 +1,4 @@
-// N을 입력받은 뒤, 구구단 N단을 출력하는 프로그램을 작성하시오. 
-// 출력 형식에 맞춰서 출력하면 된다.
-// N * x = Nx, 1 <= x <= 9, N 입력
+// 두 정수 A와 B를 입력받은 다음, A+B를 출력하는 프로그램을 작성하시오.
 
 const readline = require('readline');
 
@@ -18,12 +16,11 @@ rl.on('line', function(line){
 
 rl.on('close', function(){
 	let A = parseInt(input[0]);
+	let B = parseInt(input[1]);
 
-	test(A);
+	test(A, B);
 })
 
-function test(A){
-	for (let i=1; i<10; i++){
-		console.log(`${A} * ${i} = ${A*i}`);
-	}
+function test(A, B){
+	console.log(`${A + B}`)
 }
