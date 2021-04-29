@@ -10,17 +10,27 @@ const rl = readline.createInterface({
 let input = []
 
 rl.on('line', function(line){
-	input = line.split(' ');
-	rl.close();
+	input.push(line);
+	// console.log(input)
+}).on('close', function(){
+
+	let numbers = [];
+	
+
+	for(let i = 0; i < input.length; i++){
+		numbers.push(input[i].split(' '));
+		
+	}
+
+	// console.log(numbers);
+	for(let i=0; i< numbers.length; i++){
+		if(numbers[i].length === 2){
+			let num1 = parseInt(numbers[i][0]);
+			let num2 = parseInt(numbers[i][1]);
+
+			console.log(num1 + num2);
+		}
+	}
+
+	process.exit();
 })
-
-rl.on('close', function(){
-	let A = parseInt(input[0]);
-	let B = parseInt(input[1]);
-
-	test(A, B);
-})
-
-function test(A, B){
-	console.log(`${A + B}`)
-}
