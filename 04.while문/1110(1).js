@@ -23,9 +23,11 @@ rl.on('line', function(line){
 			step = temp%10;
 		}else{
 			step = Math.floor(temp/10) + (temp % 10);
+			console.log(`step : ${step}`);
 		}
 
 		temp = String(temp%10) + String(step%10);
+		console.log(`temp : ${temp}`);
 		temp = parseInt(temp);
 		if(temp === num){
 			bool = false;
