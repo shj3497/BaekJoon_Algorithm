@@ -4,7 +4,7 @@ let rl = readline.createInterface({
     output: process.stdout
 });
 
-
+// 각자리수의 차를 비교하여 등차수열인지 확인하였다.
 rl.on('line', function(line) {
     let n = Number(line);
     
