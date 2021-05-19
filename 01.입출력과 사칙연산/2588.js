@@ -1,9 +1,9 @@
 /*
 (세 자리 수) × (세 자리 수)는 다음과 같은 과정을 통하여 이루어진다.
 	472		(1)
-  * 385		(2)
+  385		(2)
 ----------
- 	2360	(3)
+ 	  2360	(3)
    3776		(4)
   1416		(5)
 ---------- 
@@ -22,38 +22,24 @@ const rl = readline.createInterface({
 let input = []
 
 rl.on("line", function(line){
-	input = line.split(' ');
-	rl.close();
-})
-
-rl.on("close", function(){
-	let A = parseInt(input[0]);
-	let B = input[1];
-
-	test(A, B);
-})
-
-function test(A, B){
+	input.push(line);
+}).on("close", function(){
 	
-	let len_B = B.length;
-	let C = []; // 마지막 곱셈의 합을 더하기 위해 배열을 만들어주었다.
-	for(let i=len_B; i>0; i--){
-		
-		let char_B = parseInt(B.charAt(i-1));
-		let zero_repeat = '0'.repeat(len_B - i)
-		
-		// console.log(zero_repeat);
+	let num1 = parseInt(input[0]);
+	let num2 = parseInt(input[1]);
+	let num3 = 1;
+	let result=0;
+	const num_array = [];
 
-		let math_test = A * char_B;
-
-		C.push(math_test + zero_repeat);
-
-		console.log(math_test);
+	for(let i=input[1].length-1; i>=0; i--){
+		num_array.push(num1 * parseInt(input[1].charAt(i)));
 	}
+	
+	num_array.map(item => console.log(item));
 
-	let C_sum = 0;
-	for(let j=0; j<C.length; j++){
-		C_sum = C_sum + parseInt(C[j]);
+	for(let i=0; i<num_array.length; i++){
+		result = result + (num3*num_array[i]);
+		num3 = num3*10;
 	}
-	console.log(C_sum);
-}
+	console.log(result);
+})
