@@ -15,7 +15,7 @@ const rl = readline.createInterface({
 let input = [];
 
 rl.on('line', line => {
-  input.push(line.split(''));
+  input.push(line.split(' '));
 }).on('close', () => {  
   const T = parseInt(input.shift());
   for(let i=0; i<T; i++){
