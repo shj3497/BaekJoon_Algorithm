@@ -1,5 +1,4 @@
 // 에라토스테네스의 체로 풀어 봅시다.
-// 흠.. 시간초과..
 
 const readline = require("readline");
 
